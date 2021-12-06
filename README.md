@@ -1,7 +1,7 @@
 # RandomMeme
 Android App which shows random memes from reddit
 
-<img src="https://github.com/hamzaazizofficial/RandomMeme/blob/master/app/src/main/res/drawable/3%20img.jpeg" width="500" height="600"/>
+<img src="https://github.com/hamzaazizofficial/RandomMeme/blob/master/app/src/main/res/drawable/3%20img.jpeg" width="300" height="350"/>
 
 
 
