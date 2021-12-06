@@ -1,7 +1,7 @@
 # RandomMeme
 Android App which shows random memes from reddit
 
-<img src="C:\Users\9ine\Downloads\WhatsApp Image 2021-12-06 at 15.06.34 (2).jpeg"/>
+<img src="https://github.com/hamzaazizofficial/RandomMeme/blob/master/app/src/main/res/drawable/WhatsApp%20Image%202021-12-06%20at%2015.06.34%20(1).jpeg"/>
 
 ## Libraries
 - [Random Meme Api](https://meme-api.herokuapp.com/gimme)
