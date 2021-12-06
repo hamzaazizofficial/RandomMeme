@@ -1,7 +1,7 @@
 # RandomMeme
 Android App which shows random memes from reddit
 
-<img src="https://github.com/hamzaazizofficial/RandomMeme/blob/master/app/src/main/res/drawable/WhatsApp%20Image%202021-12-06%20at%2015.32.53%20(1).jpeg" width="500" height="400"/>
+<img src="https://github.com/hamzaazizofficial/RandomMeme/blob/master/app/src/main/res/drawable/3%20img.jpeg"/>
 
 
 
