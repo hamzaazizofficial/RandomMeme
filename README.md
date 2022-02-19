@@ -17,5 +17,5 @@ Android App which shows random memes from reddit
 - [Glide](https://github.com/bumptech/glide)
 - [Material](https://material.io/develop/android)
 
-## API
+## API used
 - [Random Meme Api](https://meme-api.herokuapp.com/gimme)
