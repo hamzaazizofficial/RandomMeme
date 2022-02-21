@@ -2,10 +2,9 @@ package com.example.memeshare
 
 import android.content.Intent
 import android.graphics.drawable.Drawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
@@ -18,13 +17,13 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
     private var currentImgUrl: String = ""
-    lateinit var apiViewModel: ApiModel
+    private lateinit var apiViewModel: MemeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        apiViewModel = ViewModelProvider(this)[ApiModel::class.java]
+        apiViewModel = ViewModelProvider(this)[MemeViewModel::class.java]
         showMeme()
 
         binding.floatBtn.setOnClickListener {
@@ -41,20 +40,12 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+        observeViewModel()
     }
 
-    private fun shareMeme() {
-        val intent = Intent(Intent.ACTION_SEND)
-        intent.putExtra(Intent.EXTRA_TEXT, "Check out this meme! $currentImgUrl")
-        intent.type = "text/plain"
-        val shareIntent = Intent.createChooser(intent, "Share this Meme")
-        startActivity(shareIntent)
-    }
-
-    private fun showMeme() {
-        binding.progressBar.visibility = View.VISIBLE
-        apiViewModel.loadMeme(onSuccess = { response ->
-            currentImgUrl = response.getString("url")
+    private fun observeViewModel() {
+        apiViewModel.memeUrl.observe(this) { imageUrl ->
+            currentImgUrl = imageUrl
             Glide.with(this).load(currentImgUrl).listener(object : RequestListener<Drawable> {
                 override fun onLoadFailed(
                     e: GlideException?,
@@ -77,7 +68,20 @@ class MainActivity : AppCompatActivity() {
                     return false
                 }
             }).into(binding.imageView)
-        })
+        }
+    }
+
+    private fun shareMeme() {
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.putExtra(Intent.EXTRA_TEXT, "Check out this meme! $currentImgUrl")
+        intent.type = "text/plain"
+        val shareIntent = Intent.createChooser(intent, "Share this Meme")
+        startActivity(shareIntent)
+    }
+
+    private fun showMeme() {
+        binding.progressBar.visibility = View.VISIBLE
+        apiViewModel.loadMeme(subredditName = "")
     }
 }
 
