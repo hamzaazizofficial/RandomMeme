@@ -40,9 +40,7 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-
         observeViewModel()
-
     }
 
     private fun observeViewModel() {
@@ -72,7 +70,6 @@ class MainActivity : AppCompatActivity() {
             }).into(binding.imageView)
         }
     }
-
 
     private fun shareMeme() {
         val intent = Intent(Intent.ACTION_SEND)
