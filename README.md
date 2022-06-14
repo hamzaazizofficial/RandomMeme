@@ -1,7 +1,6 @@
 # RandomMeme
 Android App which shows random memes from reddit
 
-
 ## Screenshots
 
 <div class="column">
