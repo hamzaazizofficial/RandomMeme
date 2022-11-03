@@ -1,5 +1,5 @@
 # RandomMeme
-Android App which shows random memes from reddit
+MVVM Android App which shows random memes from reddit
 
 ## Screenshots
 
