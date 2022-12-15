@@ -12,6 +12,8 @@ MVVM Android App which shows random memes from reddit
 </div>
 
 
+
+
 ## Libraries
 
 - [Volley Android](https://developer.android.com/training/volley)
